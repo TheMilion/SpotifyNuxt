@@ -1,0 +1,56 @@
+<template>
+  <div class="container">
+      <div id="login">
+        <h1>Login in with Spotify</h1>
+        <a @click="gotoPage" class="btn btn-primary">Log in with Spotify</a>
+      </div>
+      <div id="loggedin">
+        <div id="user-profile">
+        </div>
+        <div id="oauth">
+        </div>
+        <button class="btn btn-default" id="obtain-new-token">Obtain new token using the refresh token</button>
+  
+</div>
+  </div>
+</template>
+
+<script>
+
+
+
+export default {
+  components: {
+  },
+  mounted(){
+},
+methods:{
+      gotoPage(){
+        location.replace('https://accounts.spotify.com/authorize' +'?response_type='+this.response_type +
+        '&client_id=' + this.client_id + (this.scope ? '&scope=' + encodeURIComponent(this.scope) : '') +
+        '&redirect_uri=' + encodeURIComponent(this.redirect_uri)
+        )}
+},
+  data() {
+      return {
+         client_id: 'b663c85881d645ef905412cbebc4cb59',
+         client_secret: '2fd0602c8e114147926ce1086a531c4b',
+         response_type: 'token',
+         redirect_uri: 'http://localhost:3000/callback',
+         scope: 'user-read-private user-read-email',
+      }
+  },
+}
+</script>
+
+<style> 
+#login, #loggedin {
+     display: show;
+      }
+      .text-overflow {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        width: 500px;
+      }
+</style>
