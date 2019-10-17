@@ -1,16 +1,10 @@
 <template>
-  <div class="container">
-      Token
-      {{this.$store.state.login.token}}
-<br>
-  <dt>Display name</dt><dd class="clearfix">{{objResponse.display_name}}</dd>
-
-            <dt>Id</dt><dd>{{objResponse.id}}</dd>
-            <dt>Email</dt><dd>{{objResponse.email}}</dd>
-             <dt>Country</dt><dd>{{objResponse.country}}</dd>
-          
-    
-            </div>
+<b-container fluid>
+<label>Display Name: </label><p>{{objResponse.display_name}}</p>
+ <label>Id: </label> <p>{{objResponse.id}}</p>
+ <label>Email: </label><p>{{objResponse.email}}</p>
+ <label>Country: </label><p>{{objResponse.country}}</p>
+   </b-container>
 </template>
 
 <script>

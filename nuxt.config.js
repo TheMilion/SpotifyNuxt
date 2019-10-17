@@ -28,6 +28,7 @@ export default {
   ** Plugins to load before mounting the App
   */
   plugins: [
+    '@/plugins/axios'
   ],
   /*
   ** Nuxt.js dev-modules
@@ -42,6 +43,7 @@ export default {
     'bootstrap-vue/nuxt',
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
+    'cookie-universal-nuxt'
   ],
   /*
   ** Axios module configuration
